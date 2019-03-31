@@ -1,0 +1,16 @@
+unbind C-b
+set-option -g prefix C-a
+bind C-a send-prefix
+
+bind C-c new-window -c "#{pane_current_path}"
+# move x clipboard into tmux paste buffer
+# bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
+# # move tmux copy buffer into x clipboard
+# bind C-y run "tmux save-buffer - | pbcopy"
+
+set -g mode-keys vi
+
+# bind -T copy-mode-vi r send -X rectangle-toggle
+# bind -T copy-mode-vi v send -X begin-selection
+
+set -sg escape-time 0
