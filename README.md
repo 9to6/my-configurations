@@ -23,6 +23,12 @@ ZSH_THEME="agnoster"
 brew install zsh zsh-completions
 ```
 
+### Installing Jump plugin
+```
+brew install jump
+```
+
+
 ### Installings Plugins
 ```
 # zsh-syntax-highlighting
