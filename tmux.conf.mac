@@ -1,0 +1,31 @@
+set -g default-command "reattach-to-user-namespace -l zsh"
+
+unbind C-b
+set-option -g prefix C-a
+bind C-a send-prefix
+
+bind C-c new-window -c "#{pane_current_path}"
+# move x clipboard into tmux paste buffer
+# bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
+# # move tmux copy buffer into x clipboard
+#bind C-y run "tmux save-buffer -a - | pbcopy"
+
+#setw -g mode-keys vi
+#unbind -Tcopy-mode-vi Enter
+#bind-key -T copy-mode-vi 'v' send -X begin-selection
+#bind-key -T copy-mode-vi 'V' send -X select-line
+#bind-key -T copy-mode-vi 'r' send -X rectangle-toggle
+#bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+
+if-shell "uname | grep -q Darwin" {
+  bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+  bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel 'reattach-to-user-namespace pbcopy'
+} {
+  bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+  bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+}
+
+# bind -T copy-mode-vi r send -X rectangle-toggle
+# bind -T copy-mode-vi v send -X begin-selection
+
+set -sg escape-time 0
