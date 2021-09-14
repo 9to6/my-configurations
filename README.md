@@ -10,6 +10,12 @@ https://brew.sh/index_ko
 brew install rbenv
 ```
 
+## Install pyenv
+
+```
+PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.9.7
+```
+
 ## Font - Fira code
 
 ```
