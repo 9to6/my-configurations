@@ -1,5 +1,15 @@
 # my-configurations
 
+## Install Brew
+```
+https://brew.sh/index_ko
+```
+
+## Install rbenv
+```
+brew install rbenv
+```
+
 ## Font - Fira code
 
 ```
