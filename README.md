@@ -13,7 +13,7 @@ brew install rbenv
 ## Install pyenv
 
 ```
-PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.9.7
+env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.9.7
 ```
 
 ## Font - Fira code
