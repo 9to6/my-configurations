@@ -50,3 +50,17 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 
 ### Updating .zshrc file
 `plugins=(git zsh-syntax-highlighting zsh-autosuggestions)`
+
+## Setup NVIM config
+
+```
+mkdir -p ~/.config/nvim
+```
+
+```
+cat > ~/.config/nvim/init.vim << EOF
+set runtimepath+=~/.vim,~/.vim/after
+set packpath+=~/.vim
+source ~/.vimrc
+EOF
+```
