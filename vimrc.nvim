@@ -6,7 +6,7 @@ set autoindent smartindent
 set ts=4 sw=4 sts=4
 set background=dark
 
-let g:python3_host_prog = '/Users/ktg/.pyenv/shims/python'
+let g:python3_host_prog = '/Users/gunner/.pyenv/shims/python'
 
 "disable ESC
 
@@ -34,8 +34,10 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'KurtPreston/vim-autoformat-rails'
 Plugin 'posva/vim-vue'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'rhysd/vim-crystal'
-Plugin 'tomlion/vim-solidity'
+"Plugin 'rhysd/vim-crystal'
+"Plugin 'tomlion/vim-solidity'
+Plugin 'tpope/vim-commentary'
+Plugin 'lepture/vim-jinja'
 
 call vundle#end()
 filetype plugin indent on " Put your non-Plugin stuff after this line
@@ -88,6 +90,7 @@ map <silent> <F10> :TagbarToggle<CR>
 " Make `jj` and `jk` throw you into normal mode
 inoremap jj <esc>
 inoremap jk <esc>
+imap jk <Esc>
 
 "Bundle 'Tagbar' 
 let g:tagbar_type_go = {  
