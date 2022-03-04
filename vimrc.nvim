@@ -38,6 +38,8 @@ Plugin 'leafgarland/typescript-vim'
 "Plugin 'tomlion/vim-solidity'
 Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja'
+Plugin 'wgwoods/vim-systemd-syntax'
+Plugin 'elzr/vim-json'
 
 call vundle#end()
 filetype plugin indent on " Put your non-Plugin stuff after this line
@@ -74,6 +76,7 @@ autocmd Filetype crystal setlocal ts=2 sts=2 sw=2
 "autocmd Filetype vue setlocal ts=2 sts=2 sw=2
 autocmd FileType vue set tabstop=2|set shiftwidth=2|set expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype json setlocal foldmethod=syntax
 "autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " show existing tab with 4 spaces width
