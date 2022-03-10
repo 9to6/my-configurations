@@ -77,6 +77,7 @@ autocmd Filetype crystal setlocal ts=2 sts=2 sw=2
 autocmd FileType vue set tabstop=2|set shiftwidth=2|set expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal foldmethod=syntax
+autocmd Filetype tf setlocal ts=2 sts=2 sw=2
 "autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " show existing tab with 4 spaces width
