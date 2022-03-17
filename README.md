@@ -70,6 +70,11 @@ pip3 install pynvim
 ## Install Tmux
 ```$ brew install tmux```
 
+### Downloading tmux.conf
+```
+curl -o ~/.tmux.conf https://raw.githubusercontent.com/9to6/my-configurations/master/tmux.conf.mac
+```
+
 ## Install CMake
 ```$ brew install cmake```
 
