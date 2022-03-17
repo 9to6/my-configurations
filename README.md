@@ -13,7 +13,7 @@ brew install rbenv
 ## Install pyenv
 
 ```
-env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.9.7
+env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.10.3
 ```
 
 ## Font - Fira code
@@ -21,6 +21,13 @@ env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.9.7
 ```
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
+```
+
+## Get Mac Terminal color scheme
+```
+mkdir ~/tmp
+cd ~/tmp
+wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/terminal/iceberg-dark.terminal
 ```
 
 ## Zsh
