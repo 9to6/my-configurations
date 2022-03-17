@@ -101,7 +101,7 @@ curl -o ~/.vimrc https://raw.githubusercontent.com/9to6/my-configurations/master
 ```$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
 
 ### Install Plugin
-Launch ```vim``` and run ```:PluginInstall```
+Launch ```nvim``` and run ```:PluginInstall```
 
 ### Compile [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 ```sh
