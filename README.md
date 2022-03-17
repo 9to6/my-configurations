@@ -44,21 +44,19 @@ ZSH_THEME="agnoster"
 
 ### Installing completions and jump
 ```
-brew install zsh-completions jump zsh-syntax-highlighting zsh-autosuggestions
+brew install zsh-completions autojump zsh-syntax-highlighting zsh-autosuggestions
 ```
 
-
-### Installings Plugins
+### Download .zshrc
 ```
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# zsh-autosuggestions
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+curl -o ~/.zshrc https://raw.githubusercontent.com/9to6/my-configurations/master/.zshrc
 ```
 
-### Updating .zshrc file
-`plugins=(git zsh-syntax-highlighting zsh-autosuggestions)`
+### directory permission problems
+``
+compaudit | xargs chmod g-w`
+```
+
 
 ## Install Neovim
 ```shell
