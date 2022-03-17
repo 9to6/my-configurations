@@ -110,3 +110,27 @@ $ ./install.py --gocode-completer
 ```
 Launch ```vim```, open ```.go``` file and run ```:GoInstallBinaries```
 
+
+# Install Language
+
+## Installing Go
+
+### gvm
+```
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+```
+
+### Not M1
+```
+gvm install go1.4 -B
+gvm install go1.
+```
+
+### M!
+```
+curl -sSL https://golang.org/dl/go1.16.2.darwin-amd64.tar.gz | tar zxv
+export GOROOT_BOOTSTRAP="$(pwd)/go"
+gvm install go1.17.8
+
+rm -rf go
+```
