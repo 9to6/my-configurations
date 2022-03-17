@@ -28,7 +28,7 @@ brew cask install font-fira-code
 ```
 mkdir ~/tmp
 cd ~/tmp
-wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/terminal/iceberg-dark.terminal
+wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/terminal/OceanicMaterial.terminal
 ```
 
 ## Zsh
