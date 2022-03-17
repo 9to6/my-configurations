@@ -73,7 +73,7 @@ pip3 install pynvim
 ```$ brew install tmux```
 
 ## Install CMake
-```$ brew install tmux```
+```$ brew install cmake```
 
 ## Install ctags
 ```$ brew install ctags```
