@@ -14,6 +14,7 @@ brew install rbenv
 
 ```
 env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.10.3
+pyenv global 3.10.3
 ```
 
 ## Font - Fira code
@@ -41,14 +42,9 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ZSH_THEME="agnoster"
 
-### Installing Zsh and completions
+### Installing completions and jump
 ```
-brew install zsh zsh-completions
-```
-
-### Installing Jump plugin
-```
-brew install jump
+brew install zsh-completions jump zsh-syntax-highlighting zsh-autosuggestions
 ```
 
 
@@ -63,6 +59,24 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 
 ### Updating .zshrc file
 `plugins=(git zsh-syntax-highlighting zsh-autosuggestions)`
+
+## Install Neovim
+```shell
+brew install neovim
+pip3 install pynvim
+```
+
+## Install Tig
+```$ brew install tig```
+
+## Install Tmux
+```$ brew install tmux```
+
+## Install CMake
+```$ brew install tmux```
+
+## Install ctags
+```$ brew install ctags```
 
 ## Setup NVIM config
 
