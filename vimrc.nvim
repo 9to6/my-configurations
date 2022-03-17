@@ -6,7 +6,7 @@ set autoindent smartindent
 set ts=4 sw=4 sts=4
 set background=dark
 
-let g:python3_host_prog = '/Users/gunner/.pyenv/shims/python'
+"let g:python3_host_prog = '/Users/gunner/.pyenv/shims/python'
 
 "disable ESC
 
