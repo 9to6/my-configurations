@@ -20,8 +20,8 @@ pyenv global 3.10.3
 ## Font - Fira code
 
 ```
-brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+brew tap homebrew/cask-fonts &&
+brew install --cask font-Fira-Code-nerd-font
 ```
 
 ## Get Mac Terminal color scheme
