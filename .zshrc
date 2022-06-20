@@ -138,7 +138,14 @@ function optoken() {
 }
 function av() {
   local session=$(cat $OP_TOKEN)
-  aws-vault exec -t $(op get totp Amazon --session $session) "$@"
+  local token=$(op get totp Amazon --session $session)
+  #aws-vault exec -t $(op get totp Amazon --session $session) "$@"
+  unset AWS_VAULT
+  for record in $(unset AWS_VAULT; aws-vault exec -t ${token} "$@" -- env | grep AWS)
+  do
+    export $record
+    tmux setenv $(echo $record | cut -d = -f 1) $(echo $record | cut -d = -f 2) 
+  done
 }
 
 #echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
