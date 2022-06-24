@@ -88,3 +88,8 @@ set-option -g default-command "/bin/bash -c 'which reattach-to-user-namespace >/
 
 # Allow the arrow key to be used immediately after changing windows
 set-option -g repeat-time 0
+
+# nvim settings
+set-option -sg escape-time 10
+set-option -g focus-events on
+# set-option -sa terminal-overrides ',xterm-256color:RGB'
