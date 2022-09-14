@@ -33,6 +33,16 @@ bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
+# Use adjust pane size
+bind-key -r -T prefix       M-Up              resize-pane -U 5
+bind-key -r -T prefix       M-Down            resize-pane -D 5
+bind-key -r -T prefix       M-Left            resize-pane -L 5
+bind-key -r -T prefix       M-Right           resize-pane -R 5
+bind-key -r -T prefix       C-Up              resize-pane -U
+bind-key -r -T prefix       C-Down            resize-pane -D
+bind-key -r -T prefix       C-Left            resize-pane -L
+bind-key -r -T prefix       C-Right           resize-pane -R
+
 # smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-h) || tmux select-pane -L"
 bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-j) || tmux select-pane -D"
@@ -87,7 +97,7 @@ set -g visual-activity on
 set-option -g default-command "/bin/bash -c 'which reattach-to-user-namespace >/dev/null && exec reattach-to-user-namespace $SHELL -l || exec $SHELL -l'"
 
 # Allow the arrow key to be used immediately after changing windows
-set-option -g repeat-time 0
+set-option -g repeat-time 100
 
 # nvim settings
 set-option -sg escape-time 10
