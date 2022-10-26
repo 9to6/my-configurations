@@ -37,9 +37,13 @@ Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'yaegassy/coc-nginx', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'dag/vim-fish'
 Plug 'iamcco/coc-spell-checker', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 "Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
@@ -102,10 +106,20 @@ xnoremap <Leader>rc :s///gc<Left><Left><Left>
 nnoremap <leader>cF :let @*=expand("%:p")<CR>
 nnoremap <leader>ch :let @*=expand("%:p:h")<CR>
 
+" makrdown preview
+nmap <C-p> <Plug>MarkdownPreviewToggle
+
+" FZF
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
 " Tab shortcut
 nnoremap th :tabnext<CR>
 nnoremap tl :tabprev<CR>
 nnoremap tn :tabnew<CR>
+nnoremap <Leader>z :FZF<CR>
+xnoremap <Leader>a w !pbcopy<CR>
 
 " NERDTree
 nnoremap <C-W>. :vertical resize +5<CR>
@@ -113,6 +127,13 @@ nnoremap <C-W>, :vertical resize -5<CR>
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" hi diffAdded ctermfg=188 ctermbg=64 cterm=bold guifg=#50FA7B guibg=NONE gui=bold
+" hi diffRemoved ctermfg=88 ctermbg=NONE cterm=NONE guifg=#FA5057 guibg=NONE gui=NONE
+hi DiffChange   ctermfg=NONE          ctermbg=NONE
+
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
 
 "Bundle 'Tagbar' 
 let g:tagbar_type_go = {  
