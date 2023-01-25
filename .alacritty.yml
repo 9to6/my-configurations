@@ -133,7 +133,6 @@ font:
     family: FiraCode Nerd Font
     style: Bold Italic
   size: 15.0
-  use_thin_strokes: true
 #font:
   # Normal (roman) font face
   #normal:
