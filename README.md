@@ -5,6 +5,34 @@
 https://brew.sh/index_ko
 ```
 
+## Install Fish
+
+```shell
+brew install fish
+```
+
+```shell
+cat /etc/shells
+which fish
+
+~ % which fish
+/opt/homebrew/bin/fish
+
+sudo -e /etc/shells
+```
+> Add fish abs path to last line
+
+```shell
+chsh -s /opt/homebrew/bin/fish
+```
+
+## Font - Fira code
+
+```
+brew tap homebrew/cask-fonts &&
+brew install --cask font-Fira-Code-nerd-font
+```
+
 ## Install rbenv
 ```
 brew install rbenv
@@ -15,13 +43,6 @@ brew install rbenv
 ```
 env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.10.3
 pyenv global 3.10.3
-```
-
-## Font - Fira code
-
-```
-brew tap homebrew/cask-fonts &&
-brew install --cask font-Fira-Code-nerd-font
 ```
 
 ## Get Mac Terminal color scheme
