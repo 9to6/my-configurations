@@ -45,6 +45,7 @@ brew install rbenv
 ## Install pyenv
 
 ```
+brew install pyenv xz
 env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install 3.10.3
 pyenv global 3.10.3
 ```
