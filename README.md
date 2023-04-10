@@ -33,6 +33,10 @@ brew tap homebrew/cask-fonts &&
 brew install --cask font-Fira-Code-nerd-font
 ```
 
+```shell
+fish_add_path /opt/homebrew/bin
+```
+
 ## Install rbenv
 ```
 brew install rbenv
