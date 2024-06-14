@@ -1,0 +1,7 @@
+creation_rules:
+  - kms: arn:aws:kms:ap-northeast-2:851725512345:alias/sops
+  ## For separated keys
+  # - kms: arn:aws:kms:ap-northeast-2:863756612345:alias/sops
+  #   path_regex: .*/allinone/.*
+  # - kms: arn:aws:kms:ap-northeast-2:851725512345:alias/sops
+  #   path_regex: .*/ops/.*

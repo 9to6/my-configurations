@@ -1,3 +1,8 @@
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
 # vim style tmux config
 
 # use C-a, since it's on the home row and easier to hit than C-b
@@ -103,3 +108,5 @@ set-option -g repeat-time 100
 set-option -sg escape-time 10
 set-option -g focus-events on
 # set-option -sa terminal-overrides ',xterm-256color:RGB'
+
+run '~/.tmux/plugins/tpm/tpm'
