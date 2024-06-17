@@ -1,0 +1,12 @@
+Library/**
+Music/**
+Downloads/**
+Documents/**
+Desktop/**
+.android
+.DS_Store
+node_modules
+.npm
+.terraform
+.vscode
+

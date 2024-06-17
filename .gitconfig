@@ -1,0 +1,15 @@
+[user]
+	name = Gunner Kwon
+	email = kkk@gmail.com
+[init]
+	defaultBranch = main
+[merge]
+	conflictStyle = zdiff3
+[rebase]
+	autostash = true
+[push]
+	default = current
+[commit]
+	verbose = true
+[diff]
+	algorithm = histogram
