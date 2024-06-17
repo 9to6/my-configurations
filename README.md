@@ -64,9 +64,11 @@ pip3 install pynvim
 $ brew install tmux
 ```
 
-### Downloading tmux.conf
+### Setup TMUX 
 ```sh
-curl -o ~/.tmux.conf https://raw.githubusercontent.com/9to6/my-configurations/master/tmux.conf.mac
+git clone https://github.com/gpakosz/.tmux.git "$HOME/private/tmux"
+cp -rf "~/private/my-configurations/.config/tmux" ~/.config/tmux
+ln -s "$HOME/private/tmux/.tmux.conf" "~/.config/tmux/tmux.conf"
 ```
 
 ## Install CMake
@@ -89,11 +91,11 @@ mkdir -p ~/.config/nvim
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 ```
 
-### M!
+### After M1 (Appli silicon)
 ```
 curl -sSL https://golang.org/dl/go1.16.2.darwin-amd64.tar.gz | tar zxv
 export GOROOT_BOOTSTRAP="$(pwd)/go"
-gvm install go1.17.8
+gvm install go1.22.0
 
 rm -rf go
 ```
