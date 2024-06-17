@@ -107,16 +107,27 @@ require("lazy").setup({
       require("fzf-lua").setup({})
     end
   },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   -- dependencies = {
+  --   --   "hrsh7th/cmp-nvim-lsp",
+  --   --   "hrsh7th/cmp-buffer",
+  --   --   "hrsh7th/cmp-path",
+  --   --   "hrsh7th/cmp-cmdline",
+  --   -- },
+  --   config = function()
+  --     -- calling `setup` is optional for customization
+  --     require("cmp").setup({
+  --       sources = {
+  --         { name = 'nvim_lsp' },
+  --         { name = "codeium" },
+  --       }
+  --     })
+  --   end
+  -- },
   {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({
-      })
-    end
+    "Exafunction/codeium.vim",
+    event = 'BufEnter'
   },
   {
     "folke/tokyonight.nvim",
@@ -129,6 +140,15 @@ require("lazy").setup({
     opts = {},
   },
   { "catppuccin/nvim", lazy = false, name = "catppuccin-mocha", priority = 9900 },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 })
 
 -- Language server configurations
@@ -136,24 +156,24 @@ vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { n
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
 local lspconfig = require('lspconfig')
--- Python
--- npm install -g pyright
+-- ""Python
+-- ""npm install -g pyright
 lspconfig.pyright.setup {}
--- javascript
--- npm install -g typescript typescript-language-server
+-- ""javascript
+-- ""npm install -g typescript typescript-language-server
 lspconfig.tsserver.setup{}
--- Terraform
--- https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md
+-- ""Terraform
+-- ""https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md
 lspconfig.terraformls.setup{}
--- C/C++
--- brew install llvm
+-- ""C/C++
+-- ""brew install llvm
 lspconfig.clangd.setup{}
 
--- Ruby
--- gem install --user-install solargraph
+-- ""Ruby
+-- ""gem install --user-install solargraph
 lspconfig.solargraph.setup{}
 
--- golang
+-- ""golang
 local util = require('lspconfig/util')
 local lastRootPath = nil
 local gopath = os.getenv("GOPATH")
@@ -172,12 +192,12 @@ lspconfig.gopls.setup {
   end,
 }
 
--- Java
--- brew install jdtls
--- mkdir -p ~/.local/share/nvim/lsp_servers/jdtls
--- cd ~/.local/share/nvim/lsp_servers/jdtls
--- curl -LO https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz
--- tar -xvzf jdt-language-server-latest.tar.gz
+-- "" Java
+-- "" brew install jdtls
+-- "" mkdir -p ~/.local/share/nvim/lsp_servers/jdtls
+-- "" cd ~/.local/share/nvim/lsp_servers/jdtls
+-- "" curl -LO https://download.eclipse.org/jdtls/snapshots/jdt-language-server-latest.tar.gz
+-- "" tar -xvzf jdt-language-server-latest.tar.gz
 lspconfig.jdtls.setup{}
 
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
