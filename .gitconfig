@@ -13,3 +13,5 @@
 	verbose = true
 [diff]
 	algorithm = histogram
+[core]
+	editor = nvim
