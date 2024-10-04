@@ -68,6 +68,7 @@ set -x LANG en_US.UTF-8
 
 alias k='kubectl'
 alias vi='nvim'
+alias vim='nvim'
 alias cat='bat'
 # alias jq='gojq'
 alias ls='eza -la'
@@ -185,3 +186,4 @@ end
 set -gx GLOO_SOCKET_IFNAME en0
 
 set -gx GOPATH $HOME/go-projects; set -gx GOROOT $HOME/.local/share/golang; set -gx PATH $GOPATH/bin $PATH; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+set -gx XDG_CONFIG_HOME $HOME/.config
