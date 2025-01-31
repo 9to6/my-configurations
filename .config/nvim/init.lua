@@ -95,9 +95,11 @@ require("lazy").setup({
     "nvim-tree/nvim-web-devicons",
     lazy = false,
   },
-  "tpope/vim-commentary",
-  "tpope/vim-fugitive",
-  "neovim/nvim-lspconfig",
+  {"tpope/vim-commentary"},
+  {"tpope/vim-fugitive"},
+  {"neovim/nvim-lspconfig"},
+  {"hrsh7th/cmp-nvim-lsp"},
+  {"hrsh7th/nvim-cmp"},
   {
     "ibhagwan/fzf-lua",
     -- optional for icon support
@@ -125,10 +127,10 @@ require("lazy").setup({
   --     })
   --   end
   -- },
-  {
-    "Exafunction/codeium.vim",
-    event = 'BufEnter'
-  },
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   event = 'BufEnter'
+  -- },
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -140,15 +142,34 @@ require("lazy").setup({
     opts = {},
   },
   { "catppuccin/nvim", lazy = false, name = "catppuccin-mocha", priority = 9900 },
+  { "jannis-baum/vivify.vim" },
+  { "mechatroner/rainbow_csv" },
+  { "AndrewRadev/linediff.vim" },
+  { "hashicorp/sentinel.vim" },
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && yarn install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "Myzel394/jsonfly.nvim",
+    },
+    keys = {
+      {
+        "<leader>j",
+        "<cmd>Telescope jsonfly<cr>",
+        desc = "Open json(fly)",
+        ft = { "json", "xml", "yaml" },
+        mode = "n"
+      }
+    }
   },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  --   build = "cd app && yarn install",
+  --   init = function()
+  --     vim.g.mkdp_filetypes = { "markdown" }
+  --   end,
+  --   ft = { "markdown" },
+  -- },
 })
 
 -- Language server configurations
@@ -161,7 +182,7 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 -- ""javascript
 -- ""npm install -g typescript typescript-language-server
-lspconfig.tsserver.setup{}
+lspconfig.ts_ls.setup{}
 -- ""Terraform
 -- ""https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md
 lspconfig.terraformls.setup{}
@@ -206,4 +227,3 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
     vim.lsp.buf.format()
   end,
 })
-
